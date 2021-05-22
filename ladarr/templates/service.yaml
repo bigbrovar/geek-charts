@@ -11,7 +11,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 7878
+      targetPort: 8686
       protocol: TCP
       name: http
   selector:
