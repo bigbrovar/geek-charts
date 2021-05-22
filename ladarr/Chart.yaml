@@ -1,0 +1,6 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Ladarr - Automatic downloader for Music :)
+name: ladarr
+version: 0.1.0
+icon: https://github.com/lidarr/lidarr.github.io/blob/master/logo/lidarr-400.png

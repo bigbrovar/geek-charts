@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: linuxserver/ladarr
-  tag: latest
+  tag: arm64v8-latest
   pullPolicy: IfNotPresent
 
 env:
@@ -16,34 +16,21 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
-  enabled: false
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
-  path: /
-  hosts:
-    - ladarr.bananaspliff.org
-  tls:
-   - secretName: ladarr-bananaspliff-org
-     hosts:
-       - ladarr.bananaspliff.org
-
 volumes:
-  - name: myvolume
+  - name: media
     persistentVolumeClaim:
-      claimName: myvolume
+      claimName: media
 
 volumeMounts:
-  - name: myvolume
+  - name: media
     mountPath: "/config"
     subPath: "configs/ladarr"
-  - name: myvolume
+  - name: media
     mountPath: "/downloads/transmission"
     subPath: "downloads/transmission"
-  - name: myvolume
-    mountPath: "/movies"
-    subPath: "medias/movies"
+  - name: media
+    mountPath: "/music"
+    subPath: "library/music"
 
 resources:
   requests:
@@ -57,4 +44,11 @@ nodeSelector: {}
 
 tolerations: []
 
-affinity: {}
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: "kubernetes.io/arch"
+            operator: In
+            values: ["arm64"]
