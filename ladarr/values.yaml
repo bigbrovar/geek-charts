@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/ladarr
+  repository: ghcr.io/linuxserver/lidarr 
   tag: arm64v8-latest
   pullPolicy: IfNotPresent
 
