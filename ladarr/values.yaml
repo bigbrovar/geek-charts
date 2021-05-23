@@ -21,6 +21,19 @@ volumes:
     persistentVolumeClaim:
       claimName: media
 
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - radarr.local
+  tls:
+   - secretName: radarr.tls
+     hosts:
+       - radarr.tls
+
 volumeMounts:
   - name: media
     mountPath: "/config"
