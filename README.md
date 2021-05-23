@@ -1,4 +1,4 @@
-## Welcome to Bananaspliff Helm Catalog
+## Welcome to bigbrovar Lidarr  Helm Catalog
 
 - helm repo add bananaspliff https://bananaspliff.github.io/geek-charts
 
