@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "ladarr.fullname" . }}
+  name: {{ template "lidarr.fullname" . }}
   labels:
-    app: {{ template "ladarr.name" . }}
-    chart: {{ template "ladarr.chart" . }}
+    app: {{ template "lidarr.name" . }}
+    chart: {{ template "lidarr.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "ladarr.name" . }}
+      app: {{ template "lidarr.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "ladarr.name" . }}
+        app: {{ template "lidarr.name" . }}
         release: {{ .Release.Name }}
     spec:
       volumes:

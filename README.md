@@ -1,21 +1,21 @@
 ## Welcome to bigbrovar Lidarr  Helm Catalog
 
-This Helm installs the latest Ladarr service on an Arm64 based kubernetes cluster
+This Helm installs the latest lidarr service on an Arm64 based kubernetes cluster
 
-- helm repo add  ladarr https://bigbrovar.github.io/ladarr-charts/
+- helm repo add  lidarr https://bigbrovar.github.io/lidarr-charts/
 
 
 
 helmfile sample :
 
     repositories:
-      - name: ladarr
-        url:  https://bigbrovar.github.io/ladarr-charts/
+      - name: lidarr
+        url:  https://bigbrovar.github.io/lidarr-charts/
 
     releases:
-      - name: ladarr-charts 
+      - name: lidarr-charts 
         namespace: media
-        chart: bigbrovar/ladarr-charts
+        chart: bigbrovar/lidarr-charts
         version: 0.1.0
         values:
              - image:
@@ -23,4 +23,4 @@ helmfile sample :
              - ingress:
                 enabled: true
                 hosts:
-                  - ladarr.local
+                  - lidarr.local

@@ -28,16 +28,16 @@ ingress:
     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - radarr.local
+    - lidarr.local
   tls:
-   - secretName: radarr.tls
+   - secretName: lidarr.tls
      hosts:
-       - radarr.tls
+       - lidarr.tls
 
 volumeMounts:
   - name: media
     mountPath: "/config"
-    subPath: "configs/ladarr"
+    subPath: "configs/lidarr"
   - name: media
     mountPath: "/downloads/transmission"
     subPath: "downloads/transmission"
