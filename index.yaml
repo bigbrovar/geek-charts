@@ -3,12 +3,12 @@ entries:
   ladarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-05-23T06:33:59.092730373+01:00"
+    created: "2021-05-23T09:21:18.022269362+01:00"
     description: Ladarr - Automatic downloader for Music :)
-    digest: 3853ca94de225c9092bf332cc99e9562530f9e18e8cfc91d7e9bc4210ed844a0
+    digest: ee2b84ef83f31244be84285eaf17b3edea8954ed51f41b2c7a65b7c0cee111ff
     icon: https://github.com/lidarr/lidarr.github.io/blob/master/logo/lidarr-400.png
     name: ladarr
     urls:
-    - ladarr-0.1.0.tgz
-    version: 0.1.0
-generated: "2021-05-23T06:33:59.091262472+01:00"
+    - ladarr-0.1.1.tgz
+    version: 0.1.1
+generated: "2021-05-23T09:21:18.020901365+01:00"
