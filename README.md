@@ -1,41 +1,26 @@
 ## Welcome to bigbrovar Lidarr  Helm Catalog
 
-- helm repo add bananaspliff https://bananaspliff.github.io/geek-charts
+This Helm installs the latest Ladarr service on an Arm64 based kubernetes cluster
 
-- do not forget to add myvolume :)
+- helm repo add  ladarr https://bigbrovar.github.io/ladarr-charts/
+
 
 
 helmfile sample :
 
     repositories:
-      - name: bananaspliff
-        url: https://bananaspliff.github.io/geek-charts
+      - name: ladarr
+        url:  https://bigbrovar.github.io/ladarr-charts/
 
     releases:
-      - name: xavier-emby
-        namespace: xavier
-        chart: bananaspliff/emby
+      - name: ladarr-charts 
+        namespace: media
+        chart: bigbrovar/ladarr-charts
         version: 0.1.0
         values:
              - image:
-                 tag: 3.6.0.2
+                 tag: arm64v8-latest
              - ingress:
                 enabled: true
                 hosts:
-                  - emby.bananaspliff.org
-                tls:
-                  - hosts:
-                      - emby.bananaspliff.org
-                    secretName: emby-bananaspliff.org
-
-      - name: xavier-sftp
-        namespace: xavier
-        chart: bananaspliff/sftp
-        version: 0.1.0
-        values:
-            - image:
-                tag: latest
-                args: "foo:password:1000"
-            - volumeMounts:
-              - name: myvolume
-                mountPath: "/home/foo"
+                  - ladarr.local
